@@ -60,9 +60,9 @@ Here are some related projects
 
 ## Downloads
 
-Linux (AppImage): **Coming on 1st December 2025** | *Tip: Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) to integrate the AppImage with your application launcher* 
+Linux (AppImage): **[Download From Releases](https://github.com/JuviGamez/quantumtube/releases/tag/v1.0-beta)** | *Tip: Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) to integrate the AppImage with your application launcher* 
 
-Windows: **Coming on 1st December 2025** 
+Windows: **Coming soon** 
 
 MacOS: **Coming Never (i don't have a mac and won't waste my time on a hackintosh, please make a pull request with a macOS build)**
 
