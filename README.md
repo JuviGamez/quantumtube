@@ -4,6 +4,17 @@
 QuantumTube is a [Youtube](https://youtube.com) frontend that focuses on privacy, it has a modern interface (which kinda looks better than normal youtube), and all data (subscriptions, liked videos, etc) is stored locally in localStorage and not sent of to some random server like google's, there are no ads and gives you a nice experience
 
 
+## Screenshots
+
+Getting Started:
+
+![Getting Started](https://raw.githubusercontent.com/JuviGamez/quantumtube/refs/heads/main/241231_18h45m38s_screenshot.png)
+
+Home Page:
+
+![Home Page](https://raw.githubusercontent.com/JuviGamez/quantumtube/refs/heads/main/241231_18h51m45s_screenshot.png)
+
+
 ## Documentation
 
 The documentation will come soon
@@ -18,7 +29,7 @@ No, but your adblocker might block some ads that are not visible, all the ads ar
 
 Yes, infact we do have Youtube Shorts, but it's very much in beta and thats why its locked behind a screen that says its in beta
 
-#### When will this project be avaliable to use?
+#### When will this go open source?
 
 This project will officially go live on 1st January 2025
 
@@ -51,9 +62,9 @@ Here are some related projects
 
 Linux (AppImage): **Coming on 1st December 2025** | *Tip: Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) to integrate the AppImage with your application launcher* 
 
-Windows: *Coming Soon*
+Windows: **Coming on 1st December 2025** 
 
-MacOS: *Coming Never (i don't have a mac and won't waste my time on a hackintosh, please make a pull request with a macOS build)*
+MacOS: **Coming Never (i don't have a mac and won't waste my time on a hackintosh, please make a pull request with a macOS build)**
 
 ## Web Version
 
