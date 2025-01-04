@@ -1,0 +1,153 @@
+.plyr {
+  --plyr-color-main: #9333ea;
+  --plyr-video-background: #000;
+  --plyr-menu-background: rgba(28, 28, 28, 0.9);
+  --plyr-menu-color: #fff;
+  --plyr-tooltip-background: rgba(28, 28, 28, 0.9);
+  --plyr-tooltip-color: #fff;
+  --plyr-captions-background: transparent;
+  --plyr-captions-text-color: #fff;
+  --plyr-control-radius: 3px;
+}
+
+/* Netflix-style captions */
+.plyr__captions {
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, sans-serif;
+  font-weight: 600;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  font-size: 2.2em !important;
+  line-height: 1.4;
+  bottom: 60px !important;
+  pointer-events: none;
+}
+
+.plyr__captions .plyr__caption {
+  background: transparent;
+  padding: 0 8px;
+  text-shadow: -2px -2px 0 #000, 
+                2px -2px 0 #000,
+               -2px 2px 0 #000,
+                2px 2px 0 #000;
+}
+
+/* Caption toggle button */
+.plyr__control[data-plyr="captions"] {
+  background: transparent !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: flex !important;
+}
+
+.plyr__control[data-plyr="captions"] svg {
+  fill: currentColor;
+  width: 18px;
+  height: 18px;
+}
+
+/* Active state for caption toggle */
+.plyr__control[data-plyr="captions"][aria-pressed="true"] {
+  background: var(--plyr-color-main) !important;
+  color: white !important;
+}
+
+/* Settings menu */
+.plyr__menu__container {
+  background: rgba(28, 28, 28, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+.plyr__menu__container .plyr__control--back {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.plyr__menu__container label.plyr__control {
+  padding: 10px 15px;
+}
+
+.plyr__menu__container label.plyr__control input[type="radio"]:checked + span {
+  background: var(--plyr-color-main);
+}
+
+/* Custom controls styling */
+.plyr__control--overlaid {
+  background: rgba(147, 51, 234, 0.8);
+  padding: 25px;
+}
+
+.plyr__control--overlaid:hover {
+  background: rgba(147, 51, 234, 1);
+  transform: scale(1.1);
+}
+
+.plyr--video .plyr__controls {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 20px 12px 20px;
+}
+
+.plyr--video .plyr__control:hover {
+  background: rgba(147, 51, 234, 0.8);
+}
+
+.plyr--full-ui input[type='range'] {
+  color: #9333ea;
+}
+
+.plyr__control--overlaid svg {
+  width: 32px;
+  height: 32px;
+}
+
+/* Progress bar */
+.plyr--full-ui input[type='range'] {
+  height: 4px;
+}
+
+.plyr__progress__buffer,
+.plyr__progress input[type='range'] {
+  height: 4px;
+}
+
+.plyr--video .plyr__progress__buffer {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Volume control */
+.plyr__volume {
+  min-width: 80px;
+}
+
+/* Time display */
+.plyr__time {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Settings menu caption options */
+.plyr__menu__container [data-plyr="captions"] {
+  display: flex !important;
+}
+
+/* Add these rules to hide ads */
+.ytp-ad-overlay-container,
+.ytp-ad-text-overlay,
+.video-ads,
+.ytp-ad-progress-list,
+.ytp-ad-message-container,
+[class*="ad-"],
+[id*="ad-"],
+[class*="advertisement"],
+[id*="advertisement"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Hide ad container */
+.plyr__video-wrapper div[style*="z-index: 2147483647"] {
+  display: none !important;
+}
+
+/* Prevent ad overlay */
+.plyr__video-embed iframe {
+  filter: none !important;
+} 

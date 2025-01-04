@@ -1,0 +1,56 @@
+/* Custom styles for shorts player */
+.plyr--video {
+  height: 100%;
+  background: transparent;
+}
+
+.plyr__video-wrapper {
+  height: 100%;
+  background: transparent;
+}
+
+/* Hide some controls for cleaner UI */
+.plyr__controls {
+  background: linear-gradient(transparent, rgba(0,0,0,0.5)) !important;
+  padding: 8px !important;
+}
+
+.plyr--video .plyr__controls {
+  padding-top: 40px !important;
+}
+
+/* Custom progress bar */
+.plyr--full-ui input[type='range'] {
+  color: #9147ff !important;
+}
+
+.plyr__control--overlaid {
+  background: rgba(145, 71, 255, 0.8) !important;
+}
+
+.plyr__control:hover {
+  background: rgba(145, 71, 255, 0.9) !important;
+}
+
+/* Vertical video optimization */
+.plyr__video-embed iframe {
+  height: 100% !important;
+  width: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
+  transform: none !important;
+}
+
+.plyr__video-embed {
+  padding-bottom: 0 !important;
+  height: 100% !important;
+}
+
+/* Hide YouTube logo and related videos */
+.plyr__video-embed iframe {
+  filter: none !important;
+}
+
+.plyr--youtube .plyr__video-wrapper {
+  background: black !important;
+} 
