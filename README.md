@@ -68,7 +68,8 @@ MacOS: **Coming Never (i don't have a mac and won't waste my time on a hackintos
 
 ## Web Version
 
-The website version of QuantumTube will come soon after the release of the Desktop Version (prob 2nd jan or 3rd)
+The Website Version is avaliable at https://quantumtube.vercel.app/
+
 ## Build desktop version from source
 
 Clone the project
