@@ -29,10 +29,6 @@ No, but your adblocker might block some ads that are not visible, all the ads ar
 
 Yes, infact we do have Youtube Shorts, but it's very much in beta and thats why its locked behind a screen that says its in beta
 
-#### When will this go open source?
-
-This project will officially go live on 1st January 2025
-
 #### Why do I see the Youtube Video Player appear sometimes when i'm watching videos?
 
 Basically, the problem is that we use the official youtube embed for showing you a video, and that's why, don't worry though, no ad's or cookies are being taken by google, we are blocking all of them, and soon, you will not be able to see the Youtube Video Player
