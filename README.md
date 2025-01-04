@@ -97,8 +97,6 @@ Start the server
 ```
 ## Run web version locally
 
-#### Note this won't work rn when the web version ain't available, it will just run `electron .`
-
 Clone the project
 
 ```bash
@@ -125,7 +123,6 @@ Run server
 ## License
 
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html#license-text)
-
 
 
 ## Contributing
