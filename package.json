@@ -1,0 +1,61 @@
+{
+  "name": "quantumtube",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"electron .\"",
+    "build": "vite build",
+    "electron:build": "npm run build && electron-builder",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@babel/core": "^7.23.7",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@jridgewell/gen-mapping": "^0.3.5",
+    "axios": "^1.6.2",
+    "express": "^4.21.2",
+    "framer-motion": "^10.16.16",
+    "plyr-react": "^5.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-player": "^2.16.0",
+    "react-router-dom": "^6.21.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "concurrently": "^8.2.2",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.13.3",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.0.8",
+    "wait-on": "^7.2.0"
+  },
+  "build": {
+    "appId": "com.quantumtube.app",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "node_modules/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
