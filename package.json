@@ -5,7 +5,7 @@
   "type": "module",
   "main": "electron/main.cjs",
   "scripts": {
-    "dev": "concurrently \"vite\" \"electron .\"",
+    "dev": "vite",
     "build": "vite build",
     "electron:build": "npm run build && electron-builder",
     "preview": "vite preview"
