@@ -120,7 +120,7 @@ Run server
 ```
 ## License
 
-[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html#license-text)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://github.com/JuviGamez/quantumtube?tab=GPL-3.0-1-ov-file)
 
 
 ## Contributing
