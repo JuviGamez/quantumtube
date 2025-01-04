@@ -3,6 +3,8 @@
 
 QuantumTube is a [Youtube](https://youtube.com) frontend that focuses on privacy, it has a modern interface (which kinda looks better than normal youtube), and all data (subscriptions, liked videos, etc) is stored locally in localStorage and not sent of to some random server like google's, there are no ads and gives you a nice experience
 
+[![Vite](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff)](#)
+[![React](https://img.shields.io/badge/React-%2320232a.svg?logo=react&logoColor=%2361DAFB)](#)
 
 ## Screenshots
 
