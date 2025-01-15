@@ -55,14 +55,20 @@ Here are some related projects
 **Client:** Vite + React
 
 
-
 ## Downloads
 
-Linux (AppImage): **[Download From Releases](https://github.com/JuviGamez/quantumtube/releases/tag/v1.0-beta)** | *Tip: Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) to integrate the AppImage with your application launcher* 
+Linux (Arch or Arch-based linux distros): [download .pacman file from releases](https://github.com/JuviGamez/quantumtube/releases/), then
+cd into your downloads folder and run the following command:
+```bash
+  sudo pacman -U quantum-tube-desktop-X.X.X.pacman
+```
+*"X.X.X" is the version number, please change it to the latest version*
 
-Windows: **Coming soon** 
+Linux (other distros): [download .appimage from releases](https://github.com/JuviGamez/quantumtube/releases/) | *Tip: Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) to integrate the AppImage with your application launcher* 
 
-MacOS: **Coming Never (i don't have a mac and won't waste my time on a hackintosh, please make a pull request with a macOS build)**
+Windows: [download exe from releases](https://github.com/JuviGamez/quantumtube/releases/) or [download setup from releases](https://github.com/JuviGamez/quantumtube/releases/) 
+
+MacOS: coming soon
 
 ## Web Version
 
