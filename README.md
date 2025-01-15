@@ -70,6 +70,8 @@ The Website Version is avaliable at https://quantumtube.vercel.app/
 
 ## Build desktop version from source
 
+*building from source is temporarily not available, there's also a new repository called "quantumtube-desktop" that will eventually have all code for desktop versions (electron) which will let you build the desktop version from source*
+
 Clone the project
 
 ```bash
