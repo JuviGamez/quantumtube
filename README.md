@@ -57,8 +57,7 @@ Here are some related projects
 
 ## Downloads
 
-#### Linux (Arch or Arch-based linux distros): [download .pacman file from releases](https://github.com/JuviGamez/quantumtube/releases/), then
-cd into your downloads folder and run the following command:
+#### Linux (Arch or Arch-based linux distros): [download .pacman file from releases](https://github.com/JuviGamez/quantumtube/releases/), then cd into your downloads folder and run the following command:
 ```bash
 sudo pacman -U quantum-tube-desktop-X.X.X.pacman
 ```
