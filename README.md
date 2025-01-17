@@ -64,7 +64,10 @@ cd into your downloads folder and run the following command:
 ```
 *"X.X.X" is the version number, please change it to the latest version*
 
-Linux (other distros): [download .appimage from releases](https://github.com/JuviGamez/quantumtube/releases/) | *Tip: Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) to integrate the AppImage with your application launcher* 
+Linux (other distros): [download .appimage from releases](https://github.com/JuviGamez/quantumtube/releases/)
+
+> [!TIP] 
+> Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) to integrate the AppImage with your application launcher
 
 Windows: [download exe from releases](https://github.com/JuviGamez/quantumtube/releases/) or [download setup from releases](https://github.com/JuviGamez/quantumtube/releases/) 
 
