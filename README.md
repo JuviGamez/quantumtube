@@ -57,21 +57,21 @@ Here are some related projects
 
 ## Downloads
 
-Linux (Arch or Arch-based linux distros): [download .pacman file from releases](https://github.com/JuviGamez/quantumtube/releases/), then
+#### Linux (Arch or Arch-based linux distros): [download .pacman file from releases](https://github.com/JuviGamez/quantumtube/releases/), then
 cd into your downloads folder and run the following command:
 ```bash
 sudo pacman -U quantum-tube-desktop-X.X.X.pacman
 ```
 *"X.X.X" is the version number, please change it to the latest version*
 
-Linux (other distros): [download .appimage from releases](https://github.com/JuviGamez/quantumtube/releases/)
+#### Linux (other distros): [download .appimage from releases](https://github.com/JuviGamez/quantumtube/releases/)
 
 > [!TIP] 
 > Use [AppImageLauncher](https://github.com/TheAssassin/AppImageLauncher) to integrate the AppImage with your application launcher
 
-Windows: [download exe from releases](https://github.com/JuviGamez/quantumtube/releases/) or [download setup from releases](https://github.com/JuviGamez/quantumtube/releases/) 
+#### Windows: [download exe from releases](https://github.com/JuviGamez/quantumtube/releases/) or [download setup from releases](https://github.com/JuviGamez/quantumtube/releases/) 
 
-MacOS: coming soon
+#### MacOS: coming soon
 
 ## Web Version
 
