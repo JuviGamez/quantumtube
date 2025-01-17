@@ -60,7 +60,7 @@ Here are some related projects
 Linux (Arch or Arch-based linux distros): [download .pacman file from releases](https://github.com/JuviGamez/quantumtube/releases/), then
 cd into your downloads folder and run the following command:
 ```bash
-  sudo pacman -U quantum-tube-desktop-X.X.X.pacman
+sudo pacman -U quantum-tube-desktop-X.X.X.pacman
 ```
 *"X.X.X" is the version number, please change it to the latest version*
 
