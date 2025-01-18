@@ -19,7 +19,7 @@ Home Page:
 
 ## Documentation
 
-The documentation will come soon
+The documentation is avaliable at https://quantumtube-docs.vercel.app
 
 ## FAQ
 
