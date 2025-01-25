@@ -18,7 +18,12 @@ export const useSearch = (query) => {
         setLoading(true);
         setError(null);
         const data = await searchVideos(query);
-        setVideos(data.items || []);
+        if (data?.items?.length) {
+          setVideos(data.items);
+        } else {
+          setError('No videos found');
+          setVideos([]);
+        }
       } catch (err) {
         console.error('Search error:', err);
         setError('Failed to search videos');

@@ -1,7 +1,11 @@
 import axios from 'axios';
 
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
-console.log('API Key loaded:', !!API_KEY);
+
+// Add error handling for missing API key
+if (!API_KEY) {
+  console.error('YouTube API key is missing! Make sure VITE_YOUTUBE_API_KEY is set in your .env file');
+}
 
 const youtube = axios.create({
   baseURL: 'https://www.googleapis.com/youtube/v3',
@@ -19,40 +23,61 @@ youtube.interceptors.request.use(request => {
   return request;
 });
 
-// Add response interceptor for debugging
+// Update error handling in the interceptor
 youtube.interceptors.response.use(
-  response => {
-    console.log('API Response:', response.data);
-    return response;
-  },
+  response => response,
   error => {
-    console.error('API Error:', error.response?.data || error.message);
+    if (error.response?.status === 403) {
+      console.error('YouTube API Error:', error.response?.data?.error?.message || 'Access forbidden');
+      // Check specific error reasons
+      const errorMessage = error.response?.data?.error?.message || '';
+      if (errorMessage.includes('API key not valid')) {
+        console.error('Invalid API key. Please check your configuration.');
+      } else if (errorMessage.includes('quota')) {
+        console.error('Quota exceeded');
+      } else {
+        console.error('Access forbidden - check API key restrictions and permissions');
+      }
+    }
     return Promise.reject(error);
   }
 );
 
+// Update fetchVideos to include better error handling
 export const fetchVideos = async (pageToken = '') => {
-  const params = new URLSearchParams({
-    part: 'snippet,statistics',
-    chart: 'mostPopular',
-    maxResults: '50',
-    key: import.meta.env.VITE_YOUTUBE_API_KEY,
-  });
+  try {
+    const params = new URLSearchParams({
+      part: 'snippet,statistics',
+      chart: 'mostPopular',
+      maxResults: '50',
+      regionCode: 'US', // Add region code
+      key: API_KEY,
+    });
 
-  if (pageToken) {
-    params.append('pageToken', pageToken);
+    if (pageToken) {
+      params.append('pageToken', pageToken);
+    }
+
+    const response = await fetch(
+      `https://www.googleapis.com/youtube/v3/videos?${params}`
+    );
+    
+    if (!response.ok) {
+      const errorData = await response.json();
+      throw new Error(errorData?.error?.message || `HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching videos:', error);
+    throw error;
   }
-
-  const response = await fetch(
-    `https://www.googleapis.com/youtube/v3/videos?${params}`
-  );
-  const data = await response.json();
-  return data;
 };
 
 export const searchVideos = async (query, pageToken = '') => {
   try {
-    // Search without language/region restrictions
+    // First get video IDs from search
     const searchResponse = await youtube.get('/search', {
       params: {
         q: query,
@@ -79,11 +104,20 @@ export const searchVideos = async (query, pageToken = '') => {
       .filter(Boolean)
       .join(',');
 
-    // Get full video details without filtering
+    if (!videoIds) {
+      return {
+        items: [],
+        pageInfo: searchResponse.data.pageInfo,
+        nextPageToken: searchResponse.data.nextPageToken
+      };
+    }
+
+    // Get full video details
     const videosResponse = await youtube.get('/videos', {
       params: {
         id: videoIds,
-        part: 'snippet,statistics'
+        part: 'snippet,statistics',
+        maxResults: 50
       }
     });
 
@@ -94,11 +128,7 @@ export const searchVideos = async (query, pageToken = '') => {
     };
   } catch (error) {
     console.error('Error searching videos:', error);
-    return {
-      items: [],
-      pageInfo: { totalResults: 0, resultsPerPage: 0 },
-      nextPageToken: null
-    };
+    throw error; // Let the hook handle the error
   }
 };
 
@@ -337,5 +367,31 @@ export const getChannelWithStats = async (channelId) => {
   } catch (error) {
     console.error('Error fetching channel stats:', error);
     return null;
+  }
+};
+
+// Add a fallback method using less quota
+const fetchTrendingVideos = async () => {
+  try {
+    const response = await youtube.get('/videos', {
+      params: {
+        part: 'snippet',
+        chart: 'mostPopular',
+        maxResults: 20,
+        regionCode: 'US',
+        videoCategoryId: '0',
+      }
+    });
+
+    return {
+      items: response.data.items.map(video => ({
+        ...video,
+        statistics: { viewCount: '0', likeCount: '0' } // Add default statistics
+      })),
+      pageInfo: response.data.pageInfo
+    };
+  } catch (error) {
+    console.error('Error fetching trending videos:', error);
+    return { items: [], pageInfo: { totalResults: 0, resultsPerPage: 0 } };
   }
 }; 

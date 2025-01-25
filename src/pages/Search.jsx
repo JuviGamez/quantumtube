@@ -27,6 +27,10 @@ const Search = () => {
   const query = searchParams.get('q');
   const { videos, loading, error } = useSearch(query);
 
+  if (!query) {
+    return <Message>Enter a search term to find videos</Message>;
+  }
+
   if (error) {
     return <Message>Error: {error}</Message>;
   }
@@ -44,14 +48,7 @@ const Search = () => {
       {videos.map((video) => (
         <VideoCard
           key={video.id}
-          video={{
-            id: video.id,
-            title: video.snippet.title,
-            thumbnail: video.snippet.thumbnails.high.url,
-            channelTitle: video.snippet.channelTitle,
-            viewCount: video.statistics.viewCount,
-            publishedAt: new Date(video.snippet.publishedAt).toLocaleDateString()
-          }}
+          video={video}
         />
       ))}
     </Grid>
